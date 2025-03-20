@@ -6,17 +6,17 @@
  *
  */
 
- /* useEffect */
- /* 
+/* useEffect */
+/* 
     connects a component with external system, like api call, animation
     two rarely used useEffect variation
     * useLayoutEffect - it fires before browser repaints the screen
     * useINsetionEffect - it fires just before react makes changes to  dom, you can insert css
  */
 
- /* performance hooks - if nothing is changed from the response it will prevents the rerendering of UI */
+/* performance hooks - if nothing is changed from the response it will prevents the rerendering of UI */
 
- /* 
+/* 
     useMemo - cache the result
     useCallback - remembers the response of a function
 

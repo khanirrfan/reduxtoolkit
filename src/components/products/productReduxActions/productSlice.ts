@@ -1,7 +1,7 @@
 // DUCK pattern
 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Products } from '../../types/types';
+import { Products } from '../../../types/products';
 
 const initialState: Products = {
     data: [],
@@ -10,10 +10,10 @@ const initialState: Products = {
     total: 0,
     skip: 0,
     limit: 0
-}
+};
 
 const productSlice = createSlice({
-    name: "productSlice",
+    name: 'productSlice',
     initialState,
     reducers: {
         setProducts(state, action: PayloadAction<Products>) {
@@ -26,21 +26,21 @@ const productSlice = createSlice({
             state.limit = action.payload.limit;
         },
         // filter products
-        filterProducts(state, action: PayloadAction<string[]>){
-            if(action.payload.length > 0) {
+        filterProducts(state, action: PayloadAction<string[]>) {
+            if (action.payload.length > 0) {
                 state.products = state.data.filter((item) => {
-                    return action.payload.includes(item.category)
+                    return action.payload.includes(item.category);
                 });
             } else {
                 state.products = state.data;
             }
-        },
-        filterCategories(state, action: PayloadAction<Products>) {
-
         }
+        // filterCategories(state, action: PayloadAction<Products>) {
+
+        // }
     }
 });
 
-export const { setProducts, filterProducts, filterCategories } = productSlice.actions;
+export const { setProducts, filterProducts } = productSlice.actions;
 
 export default productSlice.reducer;

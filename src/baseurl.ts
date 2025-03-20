@@ -1,3 +1,3 @@
 export const baseurl = () => {
-    return "https://dummyjson.com"
-}
+    return 'https://dummyjson.com';
+};
