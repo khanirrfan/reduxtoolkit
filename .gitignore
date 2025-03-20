@@ -7,9 +7,16 @@
 
 # testing
 /coverage
+*.test.ts
+*.test.tsx
+*.test.js
+*.test.jsx
+/karma-coverage/
 
 # production
 /build
+/dist
+/out
 
 # misc
 .DS_Store
@@ -17,10 +24,29 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.env.*.local
 
+# log files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-#lock file
+# lock files
 package-lock.json
+yarn.lock
+
+# IDEs and editors
+/.idea/
+/.vscode/
+*.swp
+*.swo
+
+# TypeScript
+*.tsbuildinfo
+
+# Next.js
+.next/
+
+# Webpack
+/webpack.config.js
+/webpack.config.ts
