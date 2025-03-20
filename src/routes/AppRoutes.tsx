@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router';
 import ProductsView from '../components/products/productView/products';
 import ProductItem from '../components/products/productView/ProductItem';
 // import ProductRoute from '../components/products/productView'
-import LayoutWithSidebar from './LayoutWithSidebar';
+import LayoutWithSidebar from '../layout/LayoutWithSidebar';
 import Carts from '../components/cart/cartView/Carts';
 import CartsItem from '../components/cart/cartView/CartItem';
 // import App from '../App'

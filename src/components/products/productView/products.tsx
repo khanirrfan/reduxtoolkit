@@ -4,10 +4,12 @@ import { useAppDispatch, useAppSelector } from '../../../store/hooks';
 // import { useGetCategoriesQuery } from '../../categories/categoryReduxAction/categoryApiSlice';
 import { useGetProductsQuery } from '../productReduxActions/productApiSlice';
 import { setProducts, filterProducts } from '../productReduxActions/productSlice';
-import { Products } from '../../../types/products';
+import { Product, Products } from '../../../types/products';
+import { useNavigate } from 'react-router-dom';
 
 const ProductsView: React.FC = () => {
     const { data: _data, isFetching } = useGetProductsQuery();
+    const navigate = useNavigate();
     // const {data: _categoriesData, isFetching: isCategoriesFetched} = useGetCategoriesQuery();
     const dispatch = useAppDispatch();
     // const stat = store.getState();
@@ -26,6 +28,11 @@ const ProductsView: React.FC = () => {
                 : [...state, category]
         );
     };
+
+    function handleRoute(product: Product) {
+        navigate(`${product.id}`);
+    }
+
     if (isFetching) return <p>loading....</p>;
     return (
         <>
@@ -56,7 +63,7 @@ const ProductsView: React.FC = () => {
             </div>
             <div className="card-container">
                 {filteredProducts.products.map((product) => (
-                    <div className="card" key={product.id}>
+                    <div className="card" key={product.id} onClick={() => handleRoute(product)}>
                         <h4>{product.title}</h4>
                         <img src={product.thumbnail} alt="Avatar" width={200} height={200} />
                         <div className="container">
