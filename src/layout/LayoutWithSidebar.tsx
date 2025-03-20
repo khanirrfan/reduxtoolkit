@@ -10,7 +10,7 @@ const LayoutWithSidebar: React.FC = () => {
         { tabName: 'Cart', tabUrl: '/cart', parent: 'Cart' }
     ];
     function handleRoute(item: Tab) {
-        console.log(item);
+        console.log(item, 'item');
         navigate(`${item.tabUrl}`);
     }
     return (
