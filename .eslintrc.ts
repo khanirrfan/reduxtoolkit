@@ -7,6 +7,7 @@ const config: Linter.Config = {
   },
   parser: '@typescript-eslint/parser',
   extends: ['plugin:react/recommended', 'prettier', 'airbnb-base'],
+  plugins:["@typescript-eslint"],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -49,8 +50,8 @@ const config: Linter.Config = {
         'import/no-cycle': 0,
         'no-use-before-define': 0,
         'react/no-array-index-key': 0,
-    'no-param-reassign': 0,
-        "no-console": "error",
+        'no-param-reassign': 0,
+        "no-console": 0,
   },
 };
 
